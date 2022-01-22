@@ -31,8 +31,8 @@ function nextSequence() {
     var randomNumber = Math.floor(Math.random() * 4);
     var randomChosenColour = buttonColours[randomNumber];
     gamePattern.push(randomChosenColour);
-    $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
-    playSound(randomChosenColour);
+   // $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
+   // playSound(randomChosenColour);
     let i=0;
     myloop();
     function myloop(){
@@ -46,13 +46,13 @@ function nextSequence() {
           }
         }, 700);
     }
-    for(let i=0;i<gamePattern.length;i++)
-    {
-        $("#" + gamePattern[i]).fadeIn(100).fadeOut(100).fadeIn(100);
-      playSound(gamePattern[i]);
-       setTimeout(function(){
-       },2000);
-    }
+    // for(let i=0;i<gamePattern.length;i++)
+    // {
+    //     $("#" + gamePattern[i]).fadeIn(100).fadeOut(100).fadeIn(100);
+    //   playSound(gamePattern[i]);
+    //    setTimeout(function(){
+    //    },2000);
+    // }
 }
 
 function checkAnswer(currentLevel) {
