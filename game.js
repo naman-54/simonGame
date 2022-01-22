@@ -26,7 +26,6 @@ $(".btn").click(function() {
 
 function nextSequence() {
     userClickedPattern = [];
-    ṭ
     level++;
     $("#level-title").text("Level " + level);
     var randomNumber = Math.floor(Math.random() * 4);
@@ -34,26 +33,26 @@ function nextSequence() {
     gamePattern.push(randomChosenColour);
     $("#" + randomChosenColour).fadeIn(100).fadeOut(100).fadeIn(100);
     playSound(randomChosenColour);
-    // let i=0;
-    // myloop();
-    // function myloop(){
-    //   console.log('a');
-    //     setTimeout(function () {
-    //       $("#" + gamePattern[i]).fadeIn(100).fadeOut(100).fadeIn(100);
-    //       playSound(gamePattern[i]);
-    //       i++;
-    //       if(i<gamePattern.length){
-    //         myloop();
-    //       }
-    //     }, 700);
-    // }
-    // for(let i=0;i<gamePattern.length;i++)
-    // {
-    //     $("#" + gamePattern[i]).fadeIn(100).fadeOut(100).fadeIn(100);
-    //   playSound(gamePattern[i]);
-    //    setTimeout(function(){
-    //    },2000);
-    // }
+    let i=0;
+    myloop();
+    function myloop(){
+      console.log('a');
+        setTimeout(function () {
+          $("#" + gamePattern[i]).fadeIn(100).fadeOut(100).fadeIn(100);
+          playSound(gamePattern[i]);
+          i++;
+          if(i<gamePattern.length){
+            myloop();
+          }
+        }, 700);
+    }
+    for(let i=0;i<gamePattern.length;i++)
+    {
+        $("#" + gamePattern[i]).fadeIn(100).fadeOut(100).fadeIn(100);
+      playSound(gamePattern[i]);
+       setTimeout(function(){
+       },2000);
+    }
 }
 
 function checkAnswer(currentLevel) {
